@@ -6,7 +6,7 @@ env:
 cache:
   directories:
   - $HOME/OXID
-services: 
+services:
   - docker
 before_install:
   - echo 'Europe/Berlin' | sudo tee /etc/timezone
@@ -16,6 +16,7 @@ before_script:
   - sh ./ci/prepare.sh
 script:
 #  - docker run --network=oxid_proxy -ti keywanghadamioxid/php-apache-full:${OXID} bash ../test.sh
+#  - ./vendor/bin/codecept run
 before_cache:
 #  - composer remove "oxid-community/moduleinternals"
 #  - rm -rf ~/OXID/source/modules/oxcom/moduleinternals
